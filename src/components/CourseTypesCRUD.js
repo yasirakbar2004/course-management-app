@@ -1,4 +1,3 @@
-// src/components/CourseTypesCRUD.js (FINAL VERIFIED VERSION)
 
 import React, { useState } from 'react';
 import { Button, Table, Form, Modal, Row, Col, Alert } from 'react-bootstrap';

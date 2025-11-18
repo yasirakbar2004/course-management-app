@@ -1,4 +1,3 @@
-// src/components/OfferingsCRUD.js (WITH FILTER)
 
 import React, { useState, useMemo } from 'react';
 import { Button, Table, Form, Modal, Alert, Row, Col } from 'react-bootstrap';

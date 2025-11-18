@@ -1,5 +1,3 @@
-// src/components/CoursesCRUD.js (REVISED)
-
 import React, { useState } from 'react';
 import { Button, Table, Form, Modal, Row, Col, Alert } from 'react-bootstrap';
 import { FaEdit, FaTrash, FaPlus } from 'react-icons/fa';
