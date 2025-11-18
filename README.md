@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+Simplified Course Management System
+This is a single-page React application designed for basic CRUD (Create, Read, Update, Delete) operations to manage course types, courses, offerings (combinations), and student enrollment. All data is persisted locally in the browser's Local Storage.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+✨ Features
+Four-Step Data Flow: Enforces a logical dependency chain for data entry.
 
-## Available Scripts
+Persistent Storage: Data is saved in the browser and remains available upon refreshing.
 
-In the project directory, you can run:
+Granular Student Management: Separate steps for student registration and course mapping (enrollment).
 
-### `npm start`
+Verbose Mapping: Clear dropdown labels in the mapping modal showing the full "Course Type: [Type] - Course Name: [Name]".
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Course Offering Filter: Ability to filter offerings by Course Type and Course Name.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🚀 Setup and Running the Application
+This application is built using React and styled with React-Bootstrap.
 
-### `npm test`
+Prerequisites
+You need Node.js and npm (or Yarn) installed on your machine.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Installation Steps
+Clone the Repository:
 
-### `npm run build`
+Bash
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+git clone [YOUR REPO URL HERE]
+cd simplified-course-manager
+Install Dependencies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Bash
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+npm install
+# or
+# yarn install
+Run the Application:
 
-### `npm run eject`
+Bash
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+npm start
+# or
+# yarn start
+The application will open automatically in your browser at http://localhost:3000.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+💻 Application Workflow: The Four Steps
+The application is structured into four main tabs, which must be completed in order, as each step depends on the data created in the previous one.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Course Types (e.g., Individual, Group)
+Purpose: Define the general categories or format of courses.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Action: Click "Add Course Type" and enter names like Individual, Group, Online, or In-Person.
 
-## Learn More
+Data Fields: ID, Name.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Courses (e.g., English, Hindi)
+Purpose: Define the subject names.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Action: Click "Add Course" and enter names like English, Hindi, Mathematics, etc.
 
-### Code Splitting
+Data Fields: ID, Name.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. Course Offerings (The Combinations)
+Purpose: Create sellable packages by combining a Course Type with a Course Name (e.g., Individual - English).
 
-### Analyzing the Bundle Size
+Action: Click "Add Offering" and select items from the dropdowns created in steps 1 and 2.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Filter: Use the filter dropdowns at the top of the table to quickly locate specific offerings.
 
-### Making a Progressive Web App
+Data Fields: ID, Course Type ID, Course ID.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+4. Students & Mapping (Registration and Enrollment)
+This section handles the student lifecycle in three distinct actions:
 
-### Advanced Configuration
+A. Registering a Student
+Click "Register New Student".
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Enter the student's Name and Email.
 
-### Deployment
+Mapping is done separately; this modal only handles basic registration.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+B. Viewing Student Status
+Click the <FaEye /> View button next to a student.
 
-### `npm run build` fails to minify
+The modal displays the student's current enrollment status:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Course Joined: [Course Type] - [Course Name] (If mapped)
+
+Course Joined: Not Admitted yet (If not mapped)
+
+C. Mapping/Updating Enrollment
+Click the <FaMapMarkedAlt /> Map button next to a student.
+
+Crucial Feature: The "Map to Course Offering" dropdown shows the verbose format, making selection unambiguous:
+
+Course Type: Individual - Course Name: English
+
+Select the desired offering to enroll the student, or select the first option ("Unmap / Select Offering") to remove them from a course.
