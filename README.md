@@ -1,4 +1,4 @@
-Simplified Course Management System
+📚 Simplified Course Management System
 This is a single-page React application designed for basic CRUD (Create, Read, Update, Delete) operations to manage course types, courses, offerings (combinations), and student enrollment. All data is persisted locally in the browser's Local Storage.
 
 ✨ Features
