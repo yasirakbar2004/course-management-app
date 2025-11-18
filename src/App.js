@@ -1,5 +1,3 @@
-// src/App.js
-
 import React from 'react';
 import { Container, Tabs, Tab, Alert } from 'react-bootstrap';
 import useLocalStorage from './hooks/useLocalStorage';
